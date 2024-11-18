@@ -117,23 +117,11 @@ const Messenger = () => {
 
       {/* Input Section */}
       <div className="py-4 flex  items-center justify-around  w-auto mx-2">
-        <div className="flex gap-3 sm:gap-4 items-center">
-          <img
-            src={PlusIcon}
-            alt="plusicon"
-            className="w-5 h-5 sm:w-7 sm:h-7"
-          />
-          <img
-            src={CameraIcon}
-            alt="cameraicon"
-            className="w-5 h-5 sm:w-7 sm:h-7"
-          />
-          <img
-            src={GalleryIcon}
-            alt="galleryicon"
-            className="w-5 h-5 sm:w-7 sm:h-7"
-          />
-          <img src={MicIcon} alt="micicon" className="w-5 h-5 sm:w-7 sm:h-7" />
+        <div className="flex gap-4 items-center">
+          <img src={PlusIcon} alt="plusicon" className="w-7 h-7" />
+          <img src={CameraIcon} alt="cameraicon" className="w-7 h-7" />
+          <img src={GalleryIcon} alt="galleryicon" className="w-7 h-7" />
+          <img src={MicIcon} alt="micicon" className="w-7 h-7" />
         </div>
         <form
           onSubmit={handleSendMessage}
@@ -145,7 +133,7 @@ const Messenger = () => {
             placeholder="Message"
             className="bg-gray-200  sm:px-4 py-2 border rounded-full text-center"
           />
-          <button type="submit" className="w-6 h-6 sm:w-8 sm:h-8 ">
+          <button type="submit" className="w-8 h-8 ">
             <img src={Send} alt="Send" />
           </button>
         </form>
