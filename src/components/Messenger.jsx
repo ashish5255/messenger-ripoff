@@ -81,7 +81,7 @@ const Messenger = () => {
   }, [messages]); // Runs every time a new message is added
 
   return (
-    <div className="h-full sm:h-[92vh] w-full sm:w-[50vh] flex flex-col mx-auto relative">
+    <div className="h-[92vh] w-full sm:w-[50vh] flex flex-col mx-auto relative">
       {/* Messages Section */}
       <div
         className="flex flex-col overflow-y-auto bg-gray-100 px-4 space-y-3 w-full"
@@ -116,24 +116,36 @@ const Messenger = () => {
       )}
 
       {/* Input Section */}
-      <div className="py-4 flex justify-around">
-        <div className="flex gap-4 items-center">
-          <img src={PlusIcon} alt="plusicon" className="w-7 h-7" />
-          <img src={CameraIcon} alt="cameraicon" className="w-7 h-7" />
-          <img src={GalleryIcon} alt="galleryicon" className="w-7 h-7" />
-          <img src={MicIcon} alt="micicon" className="w-7 h-7" />
+      <div className="py-4 flex  items-center justify-around  w-auto mx-2">
+        <div className="flex gap-3 sm:gap-4 items-center">
+          <img
+            src={PlusIcon}
+            alt="plusicon"
+            className="w-5 h-5 sm:w-7 sm:h-7"
+          />
+          <img
+            src={CameraIcon}
+            alt="cameraicon"
+            className="w-5 h-5 sm:w-7 sm:h-7"
+          />
+          <img
+            src={GalleryIcon}
+            alt="galleryicon"
+            className="w-5 h-5 sm:w-7 sm:h-7"
+          />
+          <img src={MicIcon} alt="micicon" className="w-5 h-5 sm:w-7 sm:h-7" />
         </div>
         <form
           onSubmit={handleSendMessage}
-          className="flex space-x-4 items-center"
+          className="flex gap-3 items-center justify-center"
         >
           <input
             type="text"
             name="message"
-            placeholder="Type a message"
-            className="bg-gray-200 flex-1 px-4 py-2 border rounded-full focus:outline-none focus:ring focus:ring-blue-400"
+            placeholder="Message"
+            className="bg-gray-200  sm:px-4 py-2 border rounded-full text-center"
           />
-          <button type="submit" className="w-8 h-8">
+          <button type="submit" className="w-6 h-6 sm:w-8 sm:h-8 ">
             <img src={Send} alt="Send" />
           </button>
         </form>
