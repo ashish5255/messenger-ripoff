@@ -81,7 +81,7 @@ const Messenger = () => {
   }, [messages]); // Runs every time a new message is added
 
   return (
-    <div className="h-[92vh] w-full sm:w-[50vh] flex flex-col mx-auto relative">
+    <div className="h-full sm:h-[92vh] w-full sm:w-[50vh] flex flex-col mx-auto relative">
       {/* Messages Section */}
       <div
         className="flex flex-col overflow-y-auto bg-gray-100 px-4 space-y-3 w-full"
