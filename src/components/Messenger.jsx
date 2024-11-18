@@ -89,7 +89,7 @@ const Messenger = () => {
   return (
     <div className=" min-h-screen flex flex-col">
       {/* top section */}
-      <div className="flex justify-between h-[8vh] w-full sm:w-[50vh] mx-auto px-2 items-center">
+      <div className="flex   h-[8vh] ] gap-3 justify-around items-center">
         <div className="flex gap-3">
           <img
             src={BackIcon}
@@ -120,7 +120,7 @@ const Messenger = () => {
       </div>
 
       {/* message section */}
-      <div className=" h-[92vh] w-full sm:w-[50vh] flex flex-grow flex-col mx-auto relative">
+      <div className=" h-[92vh]  flex flex-grow flex-col mx-auto relative">
         {/* Messages Section */}
         <div
           className="flex flex-col overflow-y-auto bg-gray-100 px-4 space-y-3 w-full"
