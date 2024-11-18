@@ -94,28 +94,32 @@ const Messenger = () => {
           <img
             src={BackIcon}
             alt="backicon"
-            className="w-8 h-8 image-blue500"
+            className="w-7 h-7 sm:w-8 sm:h-8 image-blue500"
           />
           <img
             src={GroupImage}
             alt="group-image"
-            className=" w-8 h-8 rounded-full"
+            className=" w-7 h-7 sm:w-8 sm:h-8 rounded-full"
           />
-          <p className=" fontsemi">Group Chat</p>
+          <p className=" fontsemi">Group </p>
         </div>
 
         <div className="flex gap-5 sm:gap-10 items-center justify-center">
           <img
             src={CallIcon}
             alt="call-icon"
-            className="w-8 h-8 image-blue500"
+            className="w-7 h-7 sm:w-8 sm:h-8 image-blue500"
           />
           <img
             src={VIcon}
             alt="videocall-icon"
-            className="w-8 h-8 image-blue500"
+            className="w-7 h-7 sm:w-8 sm:h-8 image-blue500"
           />
-          <img src={InfoIcon} alt="info" className="w-8 h-8 image-blue500" />
+          <img
+            src={InfoIcon}
+            alt="info"
+            className="w-7 h-7 sm:w-8 sm:h-8 image-blue500"
+          />
         </div>
       </div>
 
@@ -157,10 +161,26 @@ const Messenger = () => {
         {/* Input Section */}
         <div className="py-4 flex  items-center justify-around  w-auto mx-2">
           <div className="flex gap-4 items-center">
-            <img src={PlusIcon} alt="plusicon" className="w-7 h-7" />
-            <img src={CameraIcon} alt="cameraicon" className="w-7 h-7" />
-            <img src={GalleryIcon} alt="galleryicon" className="w-7 h-7" />
-            <img src={MicIcon} alt="micicon" className="w-7 h-7" />
+            <img
+              src={PlusIcon}
+              alt="plusicon"
+              className="sm:h-7 sm:w-7 h-5 w-5"
+            />
+            <img
+              src={CameraIcon}
+              alt="cameraicon"
+              className="sm:h-7 sm:w-7 h-5 w-5"
+            />
+            <img
+              src={GalleryIcon}
+              alt="galleryicon"
+              className="sm:h-7 sm:w-7 h-5 w-5"
+            />
+            <img
+              src={MicIcon}
+              alt="micicon"
+              className="sm:h-7 sm:w-7 h-5 w-5"
+            />
           </div>
           <form
             onSubmit={handleSendMessage}
@@ -170,9 +190,9 @@ const Messenger = () => {
               type="text"
               name="message"
               placeholder="Message"
-              className="bg-gray-200  sm:px-4 py-2 border rounded-full text-center"
+              className="bg-gray-200  sm:px-4 py-2 border rounded-full text-center w-[100px] sm:w-auto ml-1"
             />
-            <button type="submit" className="w-8 h-8 ">
+            <button type="submit" className="sm:h-8 sm:w-8 h-6 w-6 ">
               <img src={Send} alt="Send" />
             </button>
           </form>
