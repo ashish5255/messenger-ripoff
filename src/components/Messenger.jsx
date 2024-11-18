@@ -89,7 +89,7 @@ const Messenger = () => {
   return (
     <div className=" min-h-screen flex flex-col">
       {/* top section */}
-      <div className="flex   h-[8vh] ] gap-3 justify-around items-center">
+      <div className="flex mx-auto h-[8vh] ] gap-12 justify-around items-center">
         <div className="flex gap-3">
           <img
             src={BackIcon}
