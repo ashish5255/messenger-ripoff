@@ -87,7 +87,7 @@ const Messenger = () => {
   }, [messages]); // Runs every time a new message is added
 
   return (
-    <div>
+    <div className=" h-full">
       {/* top section */}
       <div className="flex justify-between h-[8vh] w-full sm:w-[50vh] mx-auto px-2 items-center">
         <div className="flex gap-3">
@@ -120,7 +120,7 @@ const Messenger = () => {
       </div>
 
       {/* message section */}
-      <div className="h-[92vh] w-full sm:w-[50vh] flex flex-col mx-auto relative">
+      <div className=" h-[92vh] w-full sm:w-[50vh] flex flex-col mx-auto relative">
         {/* Messages Section */}
         <div
           className="flex flex-col overflow-y-auto bg-gray-100 px-4 space-y-3 w-full"
