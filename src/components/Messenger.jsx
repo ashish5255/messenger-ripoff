@@ -79,17 +79,17 @@ const Messenger = () => {
     }
   };
 
-  // Auto-scroll when a new message is added, but only if the user is already at the bottom
+  // Autoscroll to bottom when new message is added, it wasn't working with previous renditions
   useEffect(() => {
     if (isAtBottom) {
       scrollToBottom();
     }
-  }, [messages]); // Runs every time a new message is added
+  }, [messages]);
 
   return (
     <div className=" min-h-screen flex flex-col">
       {/* top section */}
-      <div className="flex mx-auto h-[8vh] ] gap-12 justify-around items-center">
+      <div className="flex mx-auto h-[8vh]  gap-12 items-center">
         <div className="flex gap-3">
           <img
             src={BackIcon}
@@ -104,7 +104,7 @@ const Messenger = () => {
           <p className=" fontsemi">Group Chat</p>
         </div>
 
-        <div className="flex gap-8 sm:gap-10 items-center justify-center">
+        <div className="flex gap-5 sm:gap-10 items-center justify-center">
           <img
             src={CallIcon}
             alt="call-icon"
