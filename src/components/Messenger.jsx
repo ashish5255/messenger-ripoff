@@ -9,6 +9,12 @@ import GalleryIcon from "../assets/icons/galleryicon.png";
 import MicIcon from "../assets/icons/micicon.svg";
 import DownArrow from "../assets/icons/downarrow.svg";
 
+import BackIcon from "../assets/navicons/backicon.png";
+import CallIcon from "../assets/navicons/callicon.png";
+import VIcon from "../assets/navicons/videocallicon.png";
+import InfoIcon from "../assets/navicons/infoicon.png";
+import GroupImage from "../assets/images/groupimage.jpg";
+
 const Messenger = () => {
   const dispatch = useDispatch();
   const { messages, page, loading } = useSelector((state) => state.messages);
@@ -81,62 +87,96 @@ const Messenger = () => {
   }, [messages]); // Runs every time a new message is added
 
   return (
-    <div className="h-[92vh] w-full sm:w-[50vh] flex flex-col mx-auto relative">
-      {/* Messages Section */}
-      <div
-        className="flex flex-col overflow-y-auto bg-gray-100 px-4 space-y-3 w-full"
-        ref={messagesContainerRef}
-        onScroll={handleScroll}
-      >
-        {messages.map((msg) => (
-          <div
-            key={msg.id}
-            className={`max-w-xs px-3 py-2 rounded-full ${
-              msg.type === "outgoing"
-                ? "self-end bg-blue-500 text-white text-right"
-                : "self-start bg-gray-300 text-black text-left"
-            }`}
-          >
-            {msg.message}
-          </div>
-        ))}
-        <div ref={messageEndRef} />
+    <div>
+      {/* top section */}
+      <div className="flex justify-between h-[8vh] w-full sm:w-[50vh] mx-auto px-2 items-center">
+        <div className="flex gap-3">
+          <img
+            src={BackIcon}
+            alt="backicon"
+            className="w-8 h-8 image-blue500"
+          />
+          <img
+            src={GroupImage}
+            alt="group-image"
+            className=" w-8 h-8 rounded-full"
+          />
+          <p className=" fontsemi">Group Chat</p>
+        </div>
+
+        <div className="flex gap-8 sm:gap-10 items-center justify-center">
+          <img
+            src={CallIcon}
+            alt="call-icon"
+            className="w-8 h-8 image-blue500"
+          />
+          <img
+            src={VIcon}
+            alt="videocall-icon"
+            className="w-8 h-8 image-blue500"
+          />
+          <img src={InfoIcon} alt="info" className="w-8 h-8 image-blue500" />
+        </div>
       </div>
 
-      {/* Down Arrow */}
-      {!isAtBottom && (
-        <div className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2">
-          <button
-            onClick={scrollToBottom}
-            className="rounded-full p-2 shadow-lg"
-          >
-            <img className="w-6 h-6" src={DownArrow} alt="downarrow" />
-          </button>
-        </div>
-      )}
-
-      {/* Input Section */}
-      <div className="py-4 flex  items-center justify-around  w-auto mx-2">
-        <div className="flex gap-4 items-center">
-          <img src={PlusIcon} alt="plusicon" className="w-7 h-7" />
-          <img src={CameraIcon} alt="cameraicon" className="w-7 h-7" />
-          <img src={GalleryIcon} alt="galleryicon" className="w-7 h-7" />
-          <img src={MicIcon} alt="micicon" className="w-7 h-7" />
-        </div>
-        <form
-          onSubmit={handleSendMessage}
-          className="flex gap-3 items-center justify-center"
+      {/* message section */}
+      <div className="h-[92vh] w-full sm:w-[50vh] flex flex-col mx-auto relative">
+        {/* Messages Section */}
+        <div
+          className="flex flex-col overflow-y-auto bg-gray-100 px-4 space-y-3 w-full"
+          ref={messagesContainerRef}
+          onScroll={handleScroll}
         >
-          <input
-            type="text"
-            name="message"
-            placeholder="Message"
-            className="bg-gray-200  sm:px-4 py-2 border rounded-full text-center"
-          />
-          <button type="submit" className="w-8 h-8 ">
-            <img src={Send} alt="Send" />
-          </button>
-        </form>
+          {messages.map((msg) => (
+            <div
+              key={msg.id}
+              className={`max-w-xs px-3 py-2 rounded-full ${
+                msg.type === "outgoing"
+                  ? "self-end bg-blue-500 text-white text-right"
+                  : "self-start bg-gray-300 text-black text-left"
+              }`}
+            >
+              {msg.message}
+            </div>
+          ))}
+          <div ref={messageEndRef} />
+        </div>
+
+        {/* Down Arrow */}
+        {!isAtBottom && (
+          <div className="absolute bottom-[10%] left-1/2 transform -translate-x-1/2">
+            <button
+              onClick={scrollToBottom}
+              className="rounded-full p-2 shadow-lg"
+            >
+              <img className="w-6 h-6" src={DownArrow} alt="downarrow" />
+            </button>
+          </div>
+        )}
+
+        {/* Input Section */}
+        <div className="py-4 flex  items-center justify-around  w-auto mx-2">
+          <div className="flex gap-4 items-center">
+            <img src={PlusIcon} alt="plusicon" className="w-7 h-7" />
+            <img src={CameraIcon} alt="cameraicon" className="w-7 h-7" />
+            <img src={GalleryIcon} alt="galleryicon" className="w-7 h-7" />
+            <img src={MicIcon} alt="micicon" className="w-7 h-7" />
+          </div>
+          <form
+            onSubmit={handleSendMessage}
+            className="flex gap-3 items-center justify-center"
+          >
+            <input
+              type="text"
+              name="message"
+              placeholder="Message"
+              className="bg-gray-200  sm:px-4 py-2 border rounded-full text-center"
+            />
+            <button type="submit" className="w-8 h-8 ">
+              <img src={Send} alt="Send" />
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
