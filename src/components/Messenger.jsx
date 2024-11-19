@@ -89,7 +89,7 @@ const Messenger = () => {
   return (
     <div className=" min-h-screen flex flex-col">
       {/* top section */}
-      <div className="flex mx-auto h-[8vh]  gap-12 items-center">
+      <div className="flex mx-auto py-5 gap-12 abso sm:space-x-11">
         <div className="flex gap-3">
           <img
             src={BackIcon}
@@ -159,8 +159,8 @@ const Messenger = () => {
         )}
 
         {/* Input Section */}
-        <div className="py-4 flex  items-center justify-around  w-auto mx-2">
-          <div className="flex gap-4 items-center">
+        <div className="py-4 flex  items-center justify-around   w-auto mx-2">
+          <div className="flex gap-4 gap-x-6 items-center">
             <img
               src={PlusIcon}
               alt="plusicon"
@@ -184,7 +184,7 @@ const Messenger = () => {
           </div>
           <form
             onSubmit={handleSendMessage}
-            className="flex gap-3 items-center justify-center"
+            className="flex gap-3  items-center justify-center"
           >
             <input
               type="text"
